@@ -1,3 +1,11 @@
+/* ==================================================
+   HYPERION
+   Main Stylesheet
+   Supports:
+   - index.html
+   - devices.html
+   ================================================== */
+
 *{
     margin:0;
     padding:0;
@@ -15,7 +23,9 @@ body{
     overflow-x:hidden;
 }
 
-/* Horizon */
+/* ==================================================
+   HORIZON
+   ================================================== */
 
 .horizon{
 
@@ -31,14 +41,14 @@ body{
     linear-gradient(
         90deg,
         transparent,
-        rgba(255,190,100,.3),
-        rgba(120,110,255,.3),
+        rgba(255,190,100,.30),
+        rgba(120,110,255,.30),
         transparent
     );
 
     filter:blur(8px);
 
-    animation:move 12s ease-in-out infinite;
+    animation:horizonMove 12s ease-in-out infinite;
 
     pointer-events:none;
 
@@ -46,7 +56,7 @@ body{
 
 }
 
-@keyframes move{
+@keyframes horizonMove{
 
     0%{
         transform:translateX(-3%);
@@ -62,7 +72,9 @@ body{
 
 }
 
-/* Navbar */
+/* ==================================================
+   NAVBAR
+   ================================================== */
 
 nav{
 
@@ -118,7 +130,29 @@ nav{
 
 }
 
-/* Hero */
+/* ==================================================
+   BADGES
+   ================================================== */
+
+.badge{
+
+    display:inline-block;
+
+    padding:10px 18px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:999px;
+
+    color:#c8c8d0;
+
+    background:rgba(255,255,255,.015);
+
+}
+
+/* ==================================================
+   HERO
+   ================================================== */
 
 .hero{
 
@@ -135,20 +169,6 @@ nav{
     text-align:center;
 
     padding:40px;
-
-}
-
-.badge{
-
-    padding:10px 18px;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:999px;
-
-    color:#c8c8d0;
-
-    margin-bottom:30px;
 
 }
 
@@ -172,9 +192,9 @@ nav{
 
     line-height:1.7;
 
-}
+    max-width:700px;
 
-/* Buttons */
+}
 
 .buttons{
 
@@ -185,6 +205,10 @@ nav{
     margin-top:40px;
 
 }
+
+/* ==================================================
+   BUTTONS
+   ================================================== */
 
 .btn{
 
@@ -228,7 +252,9 @@ nav{
 
 }
 
-/* Release */
+/* ==================================================
+   RELEASE
+   ================================================== */
 
 .release{
 
@@ -280,7 +306,9 @@ nav{
 
 }
 
-/* Features */
+/* ==================================================
+   FEATURES
+   ================================================== */
 
 .features{
 
@@ -292,7 +320,8 @@ nav{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
 
     gap:24px;
 
@@ -334,45 +363,33 @@ nav{
 
 }
 
-/* Devices */
+/* ==================================================
+   DEVICES PAGE
+   ================================================== */
 
-.device-hero{
+.devices-header{
 
-    max-width:1450px;
+    text-align:center;
 
-    margin:auto;
-
-    min-height:80vh;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    padding:50px;
+    padding:100px 30px 70px;
 
 }
 
-.device-text{
-
-    width:48%;
-
-}
-
-.device-text h1{
+.devices-header h1{
 
     font-size:82px;
 
     letter-spacing:-4px;
 
-    line-height:.95;
-
     margin:25px 0;
 
 }
 
-.device-text p{
+.devices-header p{
+
+    max-width:700px;
+
+    margin:auto;
 
     color:#8b8d96;
 
@@ -380,86 +397,43 @@ nav{
 
     line-height:1.7;
 
-    margin-bottom:35px;
-
 }
 
-.device-image{
-
-    width:50%;
-
-    display:flex;
-
-    justify-content:center;
-
-}
-
-.device-image img{
-
-    max-width:650px;
-
-    width:100%;
-
-    transition:.35s;
-
-    filter:drop-shadow(0 30px 80px rgba(0,0,0,.5));
-
-}
-
-.device-image img:hover{
-
-    transform:translateY(-8px);
-
-}
-
-.device-list{
-
-    max-width:1100px;
-
-    margin:60px auto;
-
-    padding:30px;
-
-}
-
-.device-list h2{
-
-    margin-bottom:25px;
-
-}
 .device-grid{
 
-    max-width:1800px;
+    max-width:1500px;
 
-    margin:60px auto;
+    margin:0 auto 80px;
 
-    padding:0 24px;
+    padding:0 30px;
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(650px,1fr));
+    grid-template-columns:
+    repeat(auto-fit,minmax(500px,1fr));
 
-    gap:36px;
+    gap:30px;
 
 }
+
 .device-card{
 
     position:relative;
 
-    height:330px;
+    height:320px;
 
     overflow:hidden;
 
-    border-radius:38px;
+    border-radius:36px;
 
     text-decoration:none;
 
     background:
     linear-gradient(
-        90deg,
-        #2b2b2f 0%,
-        #37373b 50%,
-        #2b2b2f 100%
+        135deg,
+        #2a2a2d,
+        #343438,
+        #2a2a2d
     );
 
     transition:.3s;
@@ -468,10 +442,10 @@ nav{
 
 .device-card:hover{
 
-    transform:translateY(-6px);
+    transform:translateY(-8px);
 
     box-shadow:
-    0 20px 60px rgba(0,0,0,.35);
+    0 25px 70px rgba(0,0,0,.35);
 
 }
 
@@ -486,8 +460,8 @@ nav{
     background:
     radial-gradient(
         circle at bottom,
-        rgba(255,190,100,.08),
-        transparent 45%
+        rgba(255,190,100,.10),
+        transparent 50%
     );
 
     opacity:0;
@@ -501,17 +475,18 @@ nav{
     opacity:1;
 
 }
+
 .device-name{
 
     position:absolute;
 
-    top:18px;
+    top:20px;
 
     left:50%;
 
     transform:translateX(-50%);
 
-    font-size:72px;
+    font-size:64px;
 
     font-weight:800;
 
@@ -519,21 +494,25 @@ nav{
 
     letter-spacing:-3px;
 
+    user-select:none;
+
 }
 
 .device-model{
 
     position:absolute;
 
-    top:105px;
+    top:95px;
 
     left:50%;
 
     transform:translateX(-50%);
 
+    color:white;
+
     font-size:24px;
 
-    color:#f2f2f2;
+    white-space:nowrap;
 
 }
 
@@ -541,9 +520,9 @@ nav{
 
     position:absolute;
 
-    bottom:-30px;
-
     left:50%;
+
+    bottom:-20px;
 
     transform:translateX(-50%);
 
@@ -551,13 +530,18 @@ nav{
 
     transition:.3s;
 
+    filter:
+    drop-shadow(
+        0 20px 50px rgba(0,0,0,.4)
+    );
+
 }
 
 .device-card:hover .device-image{
 
     transform:
     translateX(-50%)
-    translateY(-8px);
+    translateY(-10px);
 
 }
 
@@ -565,9 +549,9 @@ nav{
 
     position:absolute;
 
-    right:22px;
+    right:20px;
 
-    bottom:22px;
+    bottom:20px;
 
     padding:8px 16px;
 
@@ -579,22 +563,13 @@ nav{
 
     font-size:13px;
 
-}
-.device-card p{
-
-    color:#8b8d96;
+    backdrop-filter:blur(20px);
 
 }
 
-.device-card span{
-
-    color:#ffbc74;
-
-    font-weight:600;
-
-}
-
-/* Footer */
+/* ==================================================
+   FOOTER
+   ================================================== */
 
 footer{
 
@@ -630,7 +605,9 @@ footer p{
 
 }
 
-/* Mobile */
+/* ==================================================
+   MOBILE
+   ================================================== */
 
 @media(max-width:1000px){
 
@@ -646,27 +623,28 @@ footer p{
         font-size:20px;
     }
 
-    .device-hero{
-
-        flex-direction:column;
-
-        text-align:center;
-
-        gap:50px;
-
+    .devices-header h1{
+        font-size:56px;
     }
 
-    .device-text,
+    .devices-header p{
+        font-size:18px;
+    }
+
+    .device-grid{
+        grid-template-columns:1fr;
+    }
+
+    .device-name{
+        font-size:46px;
+    }
+
+    .device-model{
+        font-size:20px;
+    }
+
     .device-image{
-
-        width:100%;
-
-    }
-
-    .device-text h1{
-
-        font-size:60px;
-
+        width:180px;
     }
 
 }
