@@ -427,25 +427,80 @@ nav{
     margin-bottom:25px;
 
 }
+.device-grid{
 
+    max-width:1800px;
+
+    margin:60px auto;
+
+    padding:0 24px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(650px,1fr));
+
+    gap:36px;
+
+}
 .device-card{
 
-    display:flex;
+    position:relative;
 
-    justify-content:space-between;
+    height:330px;
 
-    align-items:center;
+    overflow:hidden;
 
-    border:1px solid rgba(255,255,255,.05);
+    border-radius:38px;
 
-    border-radius:24px;
+    text-decoration:none;
 
-    padding:28px;
+    background:
+    linear-gradient(
+        90deg,
+        #2b2b2f 0%,
+        #37373b 50%,
+        #2b2b2f 100%
+    );
 
-    background:rgba(255,255,255,.015);
+    transition:.3s;
 
 }
 
+.device-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.35);
+
+}
+
+.device-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at bottom,
+        rgba(255,190,100,.08),
+        transparent 45%
+    );
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+.device-card:hover::after{
+
+    opacity:1;
+
+}
 .device-card p{
 
     color:#8b8d96;
