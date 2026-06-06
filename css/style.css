@@ -1,372 +1,538 @@
-{
+*{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    background:#08080a;
+    background:#050507;
     color:#f5f5f5;
-    font-family:'Inter',sans-serif;
+    font-family:Inter,sans-serif;
     overflow-x:hidden;
 }
 
-.background-glow{
+/* Horizon */
+
+.horizon{
+
     position:fixed;
-    top:-250px;
-    left:50%;
-    transform:translateX(-50%);
-    width:700px;
-    height:700px;
-    background:#8b5cf6;
-    opacity:.10;
-    filter:blur(180px);
+
+    left:-10%;
+    top:68%;
+
+    width:120%;
+    height:2px;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,190,100,.3),
+        rgba(120,110,255,.3),
+        transparent
+    );
+
+    filter:blur(8px);
+
+    animation:move 12s ease-in-out infinite;
+
     pointer-events:none;
+
     z-index:-1;
+
 }
 
-/* ---------- NAV ---------- */
+@keyframes move{
+
+    0%{
+        transform:translateX(-3%);
+    }
+
+    50%{
+        transform:translateX(3%);
+    }
+
+    100%{
+        transform:translateX(-3%);
+    }
+
+}
+
+/* Navbar */
 
 nav{
+
     max-width:1400px;
+
     margin:auto;
-    padding:28px 32px;
+
+    padding:30px;
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
+
 }
 
 .logo{
-    text-decoration:none;
+
     color:white;
-    font-size:30px;
-    font-weight:700;
-    letter-spacing:-1px;
+
+    text-decoration:none;
+
+    font-size:32px;
+
+    font-weight:800;
+
+    letter-spacing:-2px;
+
 }
 
 .nav-links{
+
     display:flex;
-    gap:32px;
+
+    gap:36px;
+
 }
 
 .nav-links a{
-    color:#9ca3af;
+
+    color:#8b8d96;
+
     text-decoration:none;
+
     transition:.25s;
+
 }
 
 .nav-links a:hover{
+
     color:white;
+
 }
 
-/* ---------- HOME HERO ---------- */
+/* Hero */
 
 .hero{
+
+    min-height:80vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
     text-align:center;
-    padding:120px 24px 100px;
+
+    padding:40px;
+
 }
 
 .badge{
-    display:inline-block;
+
     padding:10px 18px;
-    border:1px solid #24242a;
+
+    border:1px solid rgba(255,255,255,.08);
+
     border-radius:999px;
-    background:rgba(255,255,255,.02);
-    color:#bdbdbd;
-    margin-bottom:28px;
+
+    color:#c8c8d0;
+
+    margin-bottom:30px;
+
 }
 
 .hero h1{
-    font-size:92px;
-    letter-spacing:-4px;
-    margin-bottom:18px;
+
+    font-size:110px;
+
+    letter-spacing:-6px;
+
+    line-height:.95;
+
 }
 
 .hero p{
-    max-width:650px;
-    margin:auto;
-    color:#9ca3af;
-    font-size:21px;
+
+    margin-top:25px;
+
+    color:#8b8d96;
+
+    font-size:24px;
+
     line-height:1.7;
+
 }
 
-/* ---------- BUTTONS ---------- */
+/* Buttons */
 
-.buttons,
-.hero-buttons{
-    margin-top:40px;
+.buttons{
+
     display:flex;
-    justify-content:center;
+
     gap:18px;
+
+    margin-top:40px;
+
 }
 
-.primary,
-.primary-btn{
-    background:#8b5cf6;
-    color:white;
-}
+.btn{
 
-.primary:hover,
-.primary-btn:hover{
-    transform:translateY(-2px);
-    box-shadow:0 0 35px rgba(139,92,246,.35);
-}
-
-.secondary,
-.secondary-btn{
-    border:1px solid #2d2d34;
-    color:white;
-    background:transparent;
-}
-
-.secondary:hover,
-.secondary-btn:hover{
-    background:#121216;
-}
-
-.buttons a,
-.hero-buttons a,
-.primary-btn,
-.secondary-btn{
     text-decoration:none;
-    padding:15px 34px;
-    border-radius:14px;
+
+    padding:16px 34px;
+
+    border-radius:999px;
+
+    transition:.25s;
+
     font-weight:600;
-    transition:.25s;
+
 }
 
-/* ---------- FEATURES ---------- */
+.primary{
 
-.features{
-    max-width:1200px;
-    margin:60px auto;
-    padding:0 24px;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:24px;
+    background:white;
+
+    color:black;
+
 }
 
-.card{
-    background:#101013;
-    border:1px solid #202025;
-    border-radius:20px;
-    padding:36px;
-    transition:.25s;
+.primary:hover{
+
+    transform:translateY(-2px);
+
 }
 
-.card:hover{
-    transform:translateY(-5px);
-    border-color:#8b5cf6;
+.secondary{
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.08);
+
 }
 
-.card h2{
-    margin-bottom:16px;
+.secondary:hover{
+
+    background:rgba(255,255,255,.03);
+
 }
 
-.card p{
-    color:#9ca3af;
-    line-height:1.7;
-}
-
-/* ---------- RELEASE ---------- */
+/* Release */
 
 .release{
+
     max-width:900px;
+
     margin:100px auto;
-    padding:0 24px;
+
+    text-align:center;
+
+    padding:40px;
+
 }
 
-.release-card{
-    background:#101013;
-    border:1px solid #202025;
+.section-title{
+
+    color:#ffbc74;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    font-size:13px;
+
+}
+
+.release h2{
+
+    margin-top:20px;
+
+    font-size:72px;
+
+}
+
+.release h3{
+
+    font-size:30px;
+
+    color:#c7c7cd;
+
+    margin-bottom:20px;
+
+}
+
+.release p{
+
+    color:#8b8d96;
+
+    line-height:1.8;
+
+}
+
+/* Features */
+
+.features{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:50px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:24px;
+
+}
+
+.feature{
+
+    border:1px solid rgba(255,255,255,.05);
+
     border-radius:24px;
-    padding:42px;
+
+    padding:32px;
+
+    background:rgba(255,255,255,.015);
+
+    transition:.3s;
+
 }
 
-.release-tag{
-    color:#8b5cf6;
-    font-size:14px;
-    font-weight:600;
+.feature:hover{
+
+    transform:translateY(-4px);
+
+    border-color:rgba(255,190,100,.2);
+
 }
 
-.release-card h2{
-    margin:18px 0;
-    font-size:42px;
+.feature h3{
+
+    margin-bottom:15px;
+
 }
 
-.release-card p{
-    color:#9ca3af;
-    line-height:1.9;
+.feature p{
+
+    color:#8b8d96;
+
+    line-height:1.8;
+
 }
 
-.release-card a{
-    display:inline-block;
-    margin-top:24px;
-    color:#8b5cf6;
-    text-decoration:none;
-}
-
-/* ---------- DEVICES PAGE ---------- */
+/* Devices */
 
 .device-hero{
-    max-width:1400px;
+
+    max-width:1450px;
+
     margin:auto;
-    min-height:85vh;
+
+    min-height:80vh;
 
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
 
-    padding:60px 40px;
+    padding:50px;
+
 }
 
-.device-info{
+.device-text{
+
     width:48%;
+
 }
 
-.hero-badge{
-    color:#8b5cf6;
-    font-size:14px;
-    font-weight:600;
-    letter-spacing:1px;
-    text-transform:uppercase;
-}
+.device-text h1{
 
-.device-info h1{
-    font-size:96px;
-    line-height:.92;
-    margin:24px 0;
+    font-size:82px;
+
     letter-spacing:-4px;
+
+    line-height:.95;
+
+    margin:25px 0;
+
 }
 
-.device-info p{
-    max-width:550px;
-    color:#9ca3af;
-    font-size:24px;
-    line-height:1.6;
+.device-text p{
+
+    color:#8b8d96;
+
+    font-size:22px;
+
+    line-height:1.7;
+
+    margin-bottom:35px;
+
 }
 
-.device-render{
+.device-image{
+
     width:50%;
+
     display:flex;
+
     justify-content:center;
+
 }
 
-.device-render img{
+.device-image img{
+
+    max-width:650px;
+
     width:100%;
-    max-width:700px;
-    filter:drop-shadow(0 40px 80px rgba(0,0,0,.5));
+
     transition:.35s;
+
+    filter:drop-shadow(0 30px 80px rgba(0,0,0,.5));
+
 }
 
-.device-render img:hover{
-    transform:translateY(-10px) rotate(-2deg);
+.device-image img:hover{
+
+    transform:translateY(-8px);
+
 }
 
-/* ---------- DEVICE LIST ---------- */
+.device-list{
 
-.devices,
-.supported{
     max-width:1100px;
-    margin:80px auto;
-    padding:0 40px;
+
+    margin:60px auto;
+
+    padding:30px;
+
 }
 
-.devices h2,
-.supported h2{
-    font-size:44px;
-    margin-bottom:30px;
+.device-list h2{
+
+    margin-bottom:25px;
+
 }
 
 .device-card{
-    background:#101013;
-    border:1px solid #202025;
-    border-radius:20px;
-    padding:30px;
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
-    margin-bottom:20px;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:24px;
+
+    padding:28px;
+
+    background:rgba(255,255,255,.015);
+
 }
 
 .device-card p{
-    color:#9ca3af;
+
+    color:#8b8d96;
+
 }
 
-.device-card span,
-.official{
-    color:#8b5cf6;
+.device-card span{
+
+    color:#ffbc74;
+
     font-weight:600;
+
 }
 
-/* ---------- FOOTER ---------- */
+/* Footer */
 
 footer{
-    border-top:1px solid #1c1c21;
+
+    margin-top:100px;
+
     padding:40px;
+
     text-align:center;
+
 }
 
-.footer-links{
-    margin:18px 0;
+.footer-line{
+
+    width:120px;
+
+    height:1px;
+
+    background:rgba(255,255,255,.08);
+
+    margin:0 auto 25px;
+
 }
 
-.footer-links a{
-    color:#9ca3af;
-    text-decoration:none;
-    margin:0 12px;
+footer h4{
+
+    margin-bottom:10px;
+
 }
 
-.footer-links a:hover{
-    color:white;
-}
-
-small,
 footer p{
-    color:#6b7280;
+
+    color:#6f7178;
+
 }
 
-/* ---------- MOBILE ---------- */
+/* Mobile */
 
 @media(max-width:1000px){
-
-    .device-hero{
-        flex-direction:column;
-        text-align:center;
-        gap:50px;
-    }
-
-    .device-info,
-    .device-render{
-        width:100%;
-    }
-
-    .device-info h1{
-        font-size:64px;
-    }
-
-    .device-info p{
-        margin:auto;
-        font-size:20px;
-    }
-
-    .hero-buttons{
-        justify-content:center;
-    }
-}
-
-@media(max-width:800px){
 
     .nav-links{
         display:none;
     }
 
     .hero h1{
-        font-size:58px;
+        font-size:70px;
     }
 
     .hero p{
-        font-size:18px;
+        font-size:20px;
     }
-}
 
+    .device-hero{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:50px;
+
+    }
+
+    .device-text,
+    .device-image{
+
+        width:100%;
+
+    }
+
+    .device-text h1{
+
+        font-size:60px;
+
+    }
+
+}
