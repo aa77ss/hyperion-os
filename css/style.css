@@ -19,22 +19,26 @@ body{
     width:700px;
     height:700px;
     background:#8b5cf6;
-    opacity:.12;
+    opacity:.10;
     filter:blur(180px);
     pointer-events:none;
     z-index:-1;
 }
 
+/* ---------- NAV ---------- */
+
 nav{
-    max-width:1200px;
+    max-width:1400px;
     margin:auto;
-    padding:28px 24px;
+    padding:28px 32px;
     display:flex;
     justify-content:space-between;
     align-items:center;
 }
 
 .logo{
+    text-decoration:none;
+    color:white;
     font-size:30px;
     font-weight:700;
     letter-spacing:-1px;
@@ -55,6 +59,8 @@ nav{
     color:white;
 }
 
+/* ---------- HOME HERO ---------- */
+
 .hero{
     text-align:center;
     padding:120px 24px 100px;
@@ -65,9 +71,9 @@ nav{
     padding:10px 18px;
     border:1px solid #24242a;
     border-radius:999px;
+    background:rgba(255,255,255,.02);
     color:#bdbdbd;
     margin-bottom:28px;
-    background:rgba(255,255,255,.02);
 }
 
 .hero h1{
@@ -84,14 +90,44 @@ nav{
     line-height:1.7;
 }
 
-.buttons{
-    margin-top:42px;
+/* ---------- BUTTONS ---------- */
+
+.buttons,
+.hero-buttons{
+    margin-top:40px;
     display:flex;
     justify-content:center;
     gap:18px;
 }
 
-.buttons a{
+.primary,
+.primary-btn{
+    background:#8b5cf6;
+    color:white;
+}
+
+.primary:hover,
+.primary-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 0 35px rgba(139,92,246,.35);
+}
+
+.secondary,
+.secondary-btn{
+    border:1px solid #2d2d34;
+    color:white;
+    background:transparent;
+}
+
+.secondary:hover,
+.secondary-btn:hover{
+    background:#121216;
+}
+
+.buttons a,
+.hero-buttons a,
+.primary-btn,
+.secondary-btn{
     text-decoration:none;
     padding:15px 34px;
     border-radius:14px;
@@ -99,24 +135,7 @@ nav{
     transition:.25s;
 }
 
-.primary{
-    background:#8b5cf6;
-    color:white;
-}
-
-.primary:hover{
-    transform:translateY(-2px);
-    box-shadow:0 0 35px rgba(139,92,246,.35);
-}
-
-.secondary{
-    border:1px solid #2d2d34;
-    color:white;
-}
-
-.secondary:hover{
-    background:#121216;
-}
+/* ---------- FEATURES ---------- */
 
 .features{
     max-width:1200px;
@@ -148,6 +167,8 @@ nav{
     color:#9ca3af;
     line-height:1.7;
 }
+
+/* ---------- RELEASE ---------- */
 
 .release{
     max-width:900px;
@@ -185,14 +206,75 @@ nav{
     text-decoration:none;
 }
 
-.devices{
-    max-width:900px;
+/* ---------- DEVICES PAGE ---------- */
+
+.device-hero{
+    max-width:1400px;
     margin:auto;
-    padding:0 24px 120px;
+    min-height:85vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:60px 40px;
 }
 
-.devices h2{
-    font-size:42px;
+.device-info{
+    width:48%;
+}
+
+.hero-badge{
+    color:#8b5cf6;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+.device-info h1{
+    font-size:96px;
+    line-height:.92;
+    margin:24px 0;
+    letter-spacing:-4px;
+}
+
+.device-info p{
+    max-width:550px;
+    color:#9ca3af;
+    font-size:24px;
+    line-height:1.6;
+}
+
+.device-render{
+    width:50%;
+    display:flex;
+    justify-content:center;
+}
+
+.device-render img{
+    width:100%;
+    max-width:700px;
+    filter:drop-shadow(0 40px 80px rgba(0,0,0,.5));
+    transition:.35s;
+}
+
+.device-render img:hover{
+    transform:translateY(-10px) rotate(-2deg);
+}
+
+/* ---------- DEVICE LIST ---------- */
+
+.devices,
+.supported{
+    max-width:1100px;
+    margin:80px auto;
+    padding:0 40px;
+}
+
+.devices h2,
+.supported h2{
+    font-size:44px;
     margin-bottom:30px;
 }
 
@@ -201,20 +283,27 @@ nav{
     border:1px solid #202025;
     border-radius:20px;
     padding:30px;
-}
-
-.device-card span{
-    color:#8b5cf6;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
 }
 
 .device-card p{
-    margin-top:14px;
     color:#9ca3af;
 }
 
+.device-card span,
+.official{
+    color:#8b5cf6;
+    font-weight:600;
+}
+
+/* ---------- FOOTER ---------- */
+
 footer{
     border-top:1px solid #1c1c21;
-    padding:40px 24px;
+    padding:40px;
     text-align:center;
 }
 
@@ -232,8 +321,38 @@ footer{
     color:white;
 }
 
-small{
+small,
+footer p{
     color:#6b7280;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:1000px){
+
+    .device-hero{
+        flex-direction:column;
+        text-align:center;
+        gap:50px;
+    }
+
+    .device-info,
+    .device-render{
+        width:100%;
+    }
+
+    .device-info h1{
+        font-size:64px;
+    }
+
+    .device-info p{
+        margin:auto;
+        font-size:20px;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
 }
 
 @media(max-width:800px){
@@ -249,134 +368,5 @@ small{
     .hero p{
         font-size:18px;
     }
-
-}
-.device-hero{
-    max-width:1400px;
-    margin:auto;
-    min-height:85vh;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding:40px;
 }
 
-.device-left{
-    width:50%;
-}
-
-.hero-tag{
-    color:#8b5cf6;
-    font-weight:600;
-    font-size:15px;
-}
-
-.device-left h1{
-    font-size:82px;
-    line-height:.95;
-    margin:25px 0;
-    letter-spacing:-4px;
-}
-
-.device-left p{
-    max-width:550px;
-    color:#9ca3af;
-    font-size:24px;
-    line-height:1.6;
-}
-
-.download-btn{
-    display:inline-block;
-    margin-top:35px;
-
-    background:white;
-    color:black;
-
-    padding:18px 38px;
-
-    border-radius:999px;
-
-    text-decoration:none;
-    font-weight:600;
-}
-
-.device-right{
-    width:50%;
-
-    display:flex;
-    justify-content:center;
-}
-
-.device-right img{
-    max-width:650px;
-    width:100%;
-
-    transition:.4s;
-}
-
-.device-right img:hover{
-    transform:translateY(-8px) rotate(-2deg);
-}
-
-.device-list{
-    max-width:1100px;
-    margin:100px auto;
-    padding:0 40px;
-}
-
-.device-list h2{
-    margin-bottom:30px;
-    font-size:42px;
-}
-
-.device-card{
-    background:#101013;
-    border:1px solid #202025;
-
-    border-radius:20px;
-
-    padding:30px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.device-card p{
-    color:#9ca3af;
-}
-
-.official{
-    color:#8b5cf6;
-    font-weight:600;
-}
-
-@media(max-width:1000px){
-
-.device-hero{
-    flex-direction:column;
-    text-align:center;
-}
-
-.device-left,
-.device-right{
-    width:100%;
-}
-
-.device-left h1{
-    font-size:60px;
-}
-
-.device-left p{
-    margin:auto;
-    font-size:20px;
-}
-
-.device-right{
-    margin-top:50px;
-}
-
-}
-```
