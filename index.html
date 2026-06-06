@@ -1,35 +1,147 @@
+**index.html**
+
+```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hyperion</title>
-    <style>
-        body {
-            background: #000;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 100px;
-        }
 
-        h1 {
-            color: #a855f7;
-            font-size: 60px;
-        }
+    <link rel="stylesheet" href="style.css">
 
-        button {
-            background: #a855f7;
-            border: none;
-            padding: 15px 30px;
-            color: white;
-            border-radius: 12px;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <h1>Hyperion</h1>
-    <p>Beyond Performance.</p>
 
-    <button>Download</button>
+<body>
+
+<div class="background-glow"></div>
+
+<nav>
+    <div class="logo">
+        Hyperion
+    </div>
+
+    <div class="nav-links">
+        <a href="#">Downloads</a>
+        <a href="#">Devices</a>
+        <a href="#">Changelog</a>
+        <a href="#">GitHub</a>
+    </div>
+</nav>
+
+<section class="hero">
+
+    <div class="badge">
+        Android 16 • Based on DerpFest
+    </div>
+
+    <h1>Hyperion</h1>
+
+    <p>
+        A refined Android experience built for speed,
+        stability, and customization.
+    </p>
+
+    <div class="buttons">
+        <a href="#" class="primary">
+            Download
+        </a>
+
+        <a href="#" class="secondary">
+            GitHub
+        </a>
+    </div>
+
+</section>
+
+<section class="features">
+
+    <div class="card">
+        <h2>⚡ Fast</h2>
+        <p>
+            Lightweight and optimized for smooth daily use.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>🎨 Beautiful</h2>
+        <p>
+            Material You with carefully tuned defaults.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>🛠 Customizable</h2>
+        <p>
+            Powerful features without unnecessary clutter.
+        </p>
+    </div>
+
+</section>
+
+<section class="release">
+
+    <div class="release-card">
+
+        <span class="release-tag">
+            Latest Release
+        </span>
+
+        <h2>Hyperion v1.0 "Titan"</h2>
+
+        <p>
+            Android 16<br>
+            Galaxy Tab S6 Lite (SM-P613)<br>
+            Official Build
+        </p>
+
+        <a href="#">
+            View Changelog →
+        </a>
+
+    </div>
+
+</section>
+
+<section class="devices">
+
+    <h2>Supported Devices</h2>
+
+    <div class="device-card">
+
+        <h3>Galaxy Tab S6 Lite (2022)</h3>
+
+        <span>SM-P613</span>
+
+        <p>
+            Official support.
+        </p>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <div>
+        Hyperion
+    </div>
+
+    <div class="footer-links">
+        <a href="#">GitHub</a>
+        <a href="#">Downloads</a>
+        <a href="#">Telegram</a>
+    </div>
+
+    <small>
+        © 2026 Hyperion
+    </small>
+
+</footer>
+
 </body>
 </html>
+```
